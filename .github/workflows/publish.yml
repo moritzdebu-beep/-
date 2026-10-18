@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - ".github/workflows/publish.yml"
+      - "source-manifest.txt"
 
 permissions:
   contents: write
