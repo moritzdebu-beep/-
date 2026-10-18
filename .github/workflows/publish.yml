@@ -36,7 +36,14 @@ jobs:
             new URL('/', origin),
             new URL('/student-work.html', origin)
           ];
-          const queue = [...start];
+          const manifest = (await fs.readFile('source-manifest.txt', 'utf8'))
+            .split(/\r?\n/)
+            .map(line => line.trim())
+            .filter(Boolean);
+          const queue = [
+            ...start,
+            ...manifest.map(file => new URL('/' + file, origin))
+          ];
           const seen = new Set();
           const assetPattern = /["'`]((?:\.\.?\/|\/)[^"'`<>]*?\.(?:html?|css|js|mjs|png|jpe?g|webp|gif|svg|ico|woff2?|ttf|otf|mp4|webm|mov|mp3|wav)(?:\?[^"'`<>]*)?(?:#[^"'`<>]*)?)["'`]/gi;
 
