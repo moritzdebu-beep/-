@@ -1,0 +1,128 @@
+name: Publish portfolio
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/publish.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Mirror the published portfolio
+        shell: bash
+        run: |
+          rm -rf site
+          mkdir -p site
+          node <<'NODE'
+          const fs = require('fs/promises');
+          const path = require('path');
+
+          const origin = 'https://onetwoone-aigc-portfolio.spiffy-knoll-6357.chatgpt.site';
+          const start = [
+            new URL('/', origin),
+            new URL('/student-work.html', origin)
+          ];
+          const queue = [...start];
+          const seen = new Set();
+          const assetPattern = /["'`]((?:\.\.?\/|\/)[^"'`<>]*?\.(?:html?|css|js|mjs|png|jpe?g|webp|gif|svg|ico|woff2?|ttf|otf|mp4|webm|mov|mp3|wav)(?:\?[^"'`<>]*)?(?:#[^"'`<>]*)?)["'`]/gi;
+
+          function localPath(url) {
+            let rel = decodeURIComponent(url.pathname).replace(/^\/+/, '');
+            if (!rel || rel.endsWith('/')) rel += 'index.html';
+            const cleaned = path.normalize(rel).replace(/^(\.\.(\/|\\|$))+/, '');
+            return path.join('site', cleaned);
+          }
+
+          while (queue.length) {
+            const url = queue.shift();
+            url.hash = '';
+            const key = url.href;
+            if (seen.has(key) || url.origin !== origin) continue;
+            seen.add(key);
+
+            const response = await fetch(url);
+            if (!response.ok) {
+              console.warn('Skip', response.status, url.href);
+              continue;
+            }
+
+            const data = Buffer.from(await response.arrayBuffer());
+            const target = localPath(url);
+            await fs.mkdir(path.dirname(target), { recursive: true });
+            await fs.writeFile(target, data);
+            console.log('Saved', url.pathname, data.length);
+
+            const type = response.headers.get('content-type') || '';
+            if (/text|javascript|json|xml/.test(type) || /\.(html?|css|js|mjs)$/i.test(url.pathname)) {
+              const text = data.toString('utf8');
+              for (const match of text.matchAll(assetPattern)) {
+                try {
+                  const next = new URL(match[1], url);
+                  next.search = '';
+                  next.hash = '';
+                  if (next.origin === origin && !seen.has(next.href)) queue.push(next);
+                } catch {}
+              }
+            }
+          }
+
+          for (const file of ['site/index.html', 'site/student-work.html']) {
+            try {
+              let html = await fs.readFile(file, 'utf8');
+              html = html
+                .replaceAll('"/assets/', '"./assets/')
+                .replaceAll("'/assets/", "'./assets/")
+                .replaceAll('url("/assets/', 'url("./assets/')
+                .replaceAll("url('/assets/", "url('./assets/");
+              await fs.writeFile(file, html);
+            } catch (error) {
+              console.warn('Could not patch', file, error.message);
+            }
+          }
+          NODE
+
+      - name: Store mirrored files in the repository
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish portfolio files"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
