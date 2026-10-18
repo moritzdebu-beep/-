@@ -1,0 +1,75 @@
+band.png
+card-back.png
+card-front.png
+index.html
+student-work.html
+AIGC品牌包装动画/学生作品汇总.mp4
+AIGC品牌包装动画/学生作品/31d862a90968913cae4e10063fdcc6c8.mp4
+AIGC品牌包装动画/学生作品/382e5785cb8db90029ebb3bdf1b456a6.mp4
+AIGC品牌包装动画/学生作品/4600313f2658f39aa2732010b98eb064.mp4
+AIGC品牌包装动画/学生作品/479e693d698b800f166178eb619fb91e.mp4
+AIGC品牌包装动画/学生作品/652a8078cac28bd9699a4e05195654c9.mp4
+AIGC品牌包装动画/学生作品/70e44c8342ee595d37750ef3df397b9e.mp4
+AIGC品牌包装动画/学生作品/82b329dd848c9fc54a9e1d46b0395d30.mp4
+AIGC品牌包装动画/学生作品/Ai动态品牌包装作业分享｜星河迢迢，可可知意Letters from space流星掠过红土星球，是寄给人间的星际告白来自AIGC包装班优.mp4
+AIGC品牌包装动画/学生作品/c7510055ed33c247aafaeb7cf28717b9.mp4
+AIGC品牌包装动画/学生作品/efdb56879e5782409a144e0293bacb7a.mp4
+AIGC品牌包装动画/课程案例/0d37dd0bd1a2479d11185368b51ee652.mp4
+AIGC品牌包装动画/课程案例/14c0e4fdf2417d77ebbcaae0c8a2bf3a.mp4
+AIGC品牌包装动画/课程案例/1c7ef0979b4c29a3283381f356342eb4_raw.mp4
+AIGC品牌包装动画/课程案例/3cf97a342b07ac12472eacf470a6ad1c_raw.mp4
+AIGC品牌包装动画/课程案例/5cd7ac4dfd064252e9ed8a24c44eda61_raw.mp4
+AIGC品牌包装动画/课程案例/64d57f2f5e0bdffad57bc0dedef05dc3_raw.mp4
+AIGC品牌包装动画/课程案例/刺猬包装课打卡新的包装课堂动态案例6月AIGC全流程班还会继续更新内容6月AIGC全流程包装班早鸟倒计时6天7月线下系统班目前还剩15个.mp4
+AIGC品牌包装动画/课程案例/龙马精神.mp4
+AIGC品牌包装动画/课程案例/b1b863cedeee68da463a5bfd9d6e21cd.mp4
+assets/card-front-Df57xPzT.png
+assets/course-wechat-qr-DeSXIzJz.png
+assets/e92827b434610f969df340837409b3a8-FF8vwzDi.jpg
+assets/lanyard-bundle-COfxGX3l.css
+assets/TikTokSans-Variable-CYF1_Vd5.woff2
+assets/uplifting-bass-lily-j.mp3
+assets/course-posters/course-01.jpg
+assets/course-posters/course-02.jpg
+assets/course-posters/course-03.jpg
+assets/course-posters/course-04.jpg
+assets/course-posters/course-06.jpg
+assets/course-posters/course-07.jpg
+assets/course-posters/course-08.jpg
+assets/course-posters/course-09.jpg
+standalone/band.png
+standalone/card-back.png
+standalone/card-front.png
+standalone/lanyard-bundle.css
+standalone/lanyard-bundle.js
+学生作业/05c405bb-ca38-4d09-bcce-46b78889f4c2.png
+学生作业/1883489a-13b7-46ed-9b75-e7e66805f6c9.png
+学生作业/1beb1913-366e-46ce-bc12-66590b041626.png
+学生作业/26340a35-5c26-49a9-817e-4414193673d9.png
+学生作业/350a4ff6-5b8b-4cf8-9c28-24c696e39b43.png
+学生作业/36735a5f-2f4c-4970-a076-b7bb3be6e635.png
+学生作业/4522c75e-b1b1-4c52-8e7e-33dc23078c9e.png
+学生作业/487c4e71-48c0-48e7-a156-c1a78aaffa78.png
+学生作业/488fe7fa-e1dc-4a24-8590-d90d10fc4d81.png
+学生作业/4cd62cb5-5c76-4adc-9aae-b0f0296499b1.png
+学生作业/5a4792ae-bdcd-4f08-9314-b5d6fdf8628b.png
+学生作业/5dfc0281-f7f4-4de8-8f24-c9fbc303be30.png
+学生作业/82dd1106-53e8-4e83-89bb-ddf905b54023.png
+学生作业/8f95b360-4cda-4084-aed9-194bb016b729.png
+学生作业/9e7bf58c-6129-4bd9-b8be-256b88c7e560.png
+学生作业/b137f3ba-a9b0-4a3c-9364-7b23fbdae2af.png
+学生作业/bd6b8314-b49b-4be5-8ce0-8e4bed0f27a4.png
+学生作业/c887ddfd-1cab-4b26-bdbe-2b16bf0be250.png
+学生作业/ce571dcb-0946-4edd-b07f-2f69816b27f8.png
+学生作业/d482d6b9-ed08-45ce-81c7-9ebc5d41a3be.png
+学生作业/e45882f5-30d8-48c1-9ee5-ecbf4b398723.png
+学生作业/ee4e6631-b50f-4963-aa3f-2d921d99b7bc.png
+学生作业/f068d80e-0876-449c-87ba-f8e6d5021335.png
+学生作业/f609e5c6aabce26bbefa0506e7b43e42.png
+学生作业/fa5b2a28-0e89-471e-a563-10c15b9cc313.png
+课程图片/资源 2.png
+课程图片/资源 3.png
+课程图片/资源 4.png
+课程图片/资源 5.png
+课程图片/资源 6.png
+课程图片/资源 7.png
