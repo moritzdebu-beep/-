@@ -1,0 +1,237 @@
+body.about-page {
+  color: #111111;
+  background-color: #ffffff;
+  background-image: url("./assets/about/purple-fade.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-attachment: fixed;
+}
+
+body.about-page::before {
+  display: none;
+}
+
+.about-page .site-header {
+  position: fixed;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: clamp(54px, 7vw, 140px);
+  padding-inline: clamp(40px, 5vw, 96px);
+  color: #111111;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.about-page .brand {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-page .primary-nav {
+  color: #b9b9b9;
+}
+
+.about-page .brand__studio {
+  color: #b9b9b9;
+}
+
+.about-page .primary-nav {
+  justify-self: end;
+  justify-content: flex-end;
+}
+
+.about-page .primary-nav .is-active {
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.22em;
+}
+
+.about-main {
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(130px, 0.45fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: clamp(54px, 7vw, 150px);
+  min-height: 100svh;
+  padding: clamp(126px, 9vw, 170px) clamp(20px, 3.2vw, 64px) clamp(28px, 2.6vw, 52px) clamp(40px, 5vw, 96px);
+}
+
+.about-intro {
+  align-self: start;
+  max-width: 1180px;
+}
+
+.about-intro h1 {
+  max-width: 1100px;
+  margin: 0;
+  font-family: "OTO Inter V", "Inter V", Inter, Arial, sans-serif;
+  font-size: clamp(30px, 2.8vw, 54px);
+  font-weight: 600 !important;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+.about-copy-primary,
+.about-copy-muted {
+  display: inline;
+}
+
+.about-copy-muted {
+  color: #b9b9b9;
+}
+
+.about-lead-token {
+  white-space: nowrap;
+}
+
+.about-emoji {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.025em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: -0.075em;
+}
+
+.about-emoji--wave {
+  margin-left: 0;
+  background-image: url("./assets/about/emoji/wave.png");
+  background-size: 150%;
+}
+
+.about-emoji--eyes {
+  background-image: url("./assets/about/emoji/eyes.png");
+  background-size: 155%;
+}
+
+.about-emoji--handshake {
+  background-image: url("./assets/about/emoji/handshake.png");
+  background-size: 140%;
+}
+
+.about-emoji--star {
+  background-image: url("./assets/about/emoji/star.png");
+  background-size: 128%;
+}
+
+.about-portrait {
+  justify-self: end;
+  width: clamp(118px, 11vw, 210px);
+  margin: 0;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.about-brands {
+  grid-column: 1 / -1;
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 4fr);
+  gap: clamp(34px, 5vw, 100px);
+  align-items: start;
+  width: 100%;
+  padding-top: clamp(80px, 11vh, 160px);
+}
+
+.about-brands h2 {
+  margin: 0;
+  font-size: clamp(25px, 2.1vw, 41px);
+  font-weight: 600 !important;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.about-client-art {
+  position: relative;
+  align-self: start;
+  overflow: hidden;
+  width: 100%;
+  height: clamp(170px, 15vw, 285px);
+  margin: 0;
+}
+
+.about-client-art img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translateY(-24%);
+  filter: brightness(0);
+  opacity: 0.27;
+}
+
+.about-page .studio-info {
+  margin-top: clamp(170px, 16vw, 320px);
+}
+
+@media (max-width: 1023px) {
+  .about-hero {
+    grid-template-columns: minmax(0, 1fr) 130px;
+    column-gap: 36px;
+    padding-top: 120px;
+  }
+
+  .about-intro h1 {
+    font-size: clamp(36px, 5.4vw, 54px);
+  }
+
+  .about-brands {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .about-client-art {
+    height: clamp(150px, 22vw, 220px);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-page .site-header {
+    grid-template-columns: 1fr;
+    padding-inline: 16px;
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr 92px;
+    grid-template-rows: auto auto auto;
+    column-gap: 18px;
+    min-height: auto;
+    padding: 106px 16px 54px;
+  }
+
+  .about-intro h1 {
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1;
+    text-align: left;
+  }
+
+  .about-portrait {
+    width: 86px;
+  }
+
+  .about-brands {
+    padding-top: 90px;
+  }
+
+  .about-brands h2 {
+    font-size: 30px;
