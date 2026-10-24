@@ -48,7 +48,7 @@ body.course-info-page::before {
 }
 
 .course-info-page .primary-nav .is-active {
-  color: #151515;
+  color: var(--header-text-color);
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.22em;

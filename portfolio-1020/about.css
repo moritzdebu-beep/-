@@ -16,7 +16,7 @@ body.about-page::before {
   position: fixed;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: var(--header-column-gap);
-  padding-inline: clamp(40px, 5vw, 96px);
+  padding-inline: var(--header-inline-padding);
   color: #111111;
   background: transparent;
   backdrop-filter: none;
@@ -28,11 +28,11 @@ body.about-page::before {
 }
 
 .about-page .primary-nav {
-  color: #b9b9b9;
+  color: var(--header-text-color);
 }
 
 .about-page .brand__studio {
-  color: #b9b9b9;
+  color: var(--header-text-color);
 }
 
 .about-page .primary-nav {
@@ -41,7 +41,7 @@ body.about-page::before {
 }
 
 .about-page .primary-nav .is-active {
-  color: #111111;
+  color: var(--header-text-color);
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.22em;
