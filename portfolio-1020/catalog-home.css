@@ -1,6 +1,6 @@
-/* Homepage collection: three equal portrait images in each row. */
+/* Homepage collection: four equal portrait images in each row. */
 .home-page .catalog-section {
-  --catalog-columns: 3;
+  --catalog-columns: 4;
   --catalog-gap: clamp(24px, 4vw, 72px);
   scroll-margin-top: 104px;
 }
