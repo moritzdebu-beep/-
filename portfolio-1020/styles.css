@@ -19,6 +19,8 @@
   font-family: "OTO Inter V", "Inter V", Inter, Arial, sans-serif;
   font-synthesis: none;
   --ink: #111111;
+  --header-font-size: clamp(22px, 2vw, 48px);
+  --header-column-gap: clamp(54px, 7vw, 140px);
   --type-gray: #61676b;
   --sky: #7ccbdc;
   --sky-soft: #e7f6f9;
@@ -86,7 +88,7 @@ body::before {
   inset: 0 0 auto;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  column-gap: clamp(54px, 7vw, 140px);
+  column-gap: var(--header-column-gap);
   align-items: center;
   width: 100%;
   height: clamp(78px, 6vw, 104px);
@@ -110,7 +112,7 @@ body::before {
 
 .brand__studio {
   color: #b9b9b9;
-  font-size: clamp(20px, 1.55vw, 34px);
+  font-size: var(--header-font-size);
   font-weight: 500;
   letter-spacing: -0.025em;
 }
@@ -122,7 +124,7 @@ body::before {
   justify-self: end;
   justify-content: flex-end;
   color: #b9b9b9;
-  font-size: clamp(20px, 1.55vw, 34px);
+  font-size: var(--header-font-size);
   font-weight: 500;
   letter-spacing: -0.01em;
 }
@@ -582,6 +584,16 @@ body.is-editing [data-editable]:hover {
   background: rgba(124, 203, 220, 0.14);
 }
 
+@media (min-width: 769px) and (max-width: 1100px) {
+  :root {
+    --header-column-gap: 24px;
+  }
+
+  .primary-nav {
+    gap: clamp(16px, 2.5vw, 28px);
+  }
+}
+
 @media (max-width: 768px) {
   .site-header {
     grid-template-columns: 1fr;
@@ -595,10 +607,6 @@ body.is-editing [data-editable]:hover {
 
   .brand {
     gap: 9px;
-  }
-
-  .brand__studio {
-    font-size: 17px;
   }
 
   .primary-nav {

@@ -15,7 +15,7 @@ body.about-page::before {
 .about-page .site-header {
   position: fixed;
   grid-template-columns: auto minmax(0, 1fr);
-  column-gap: clamp(54px, 7vw, 140px);
+  column-gap: var(--header-column-gap);
   padding-inline: clamp(40px, 5vw, 96px);
   color: #111111;
   background: transparent;
@@ -205,7 +205,7 @@ body.about-page::before {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .about-page .site-header {
     grid-template-columns: 1fr;
     padding-inline: 16px;
@@ -235,3 +235,19 @@ body.about-page::before {
 
   .about-brands h2 {
     font-size: 30px;
+  }
+
+  .about-client-art {
+    height: clamp(150px, 37vw, 235px);
+  }
+
+  .about-client-art img {
+    width: 190%;
+    max-width: none;
+    transform: translate(-3.2%, -18%);
+  }
+
+  .about-page .studio-info {
+    margin-top: 150px;
+  }
+}
