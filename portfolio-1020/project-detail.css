@@ -49,12 +49,6 @@ body.project-page::before { display: none; }
   font-size: clamp(14px, 1vw, 19px);
   line-height: 1.6;
 }
-.project-intro__category {
-  margin: 24px 0 0;
-  color: #777;
-  font-size: 13px;
-  line-height: 1.6;
-}
 .project-gallery {
   display: grid;
   gap: 4px;
@@ -63,7 +57,6 @@ body.project-page::before { display: none; }
   margin-inline: auto;
 }
 .project-gallery figure { margin: 0; }
-.project-gallery figure[data-section-start] { margin-top: clamp(54px, 9.2vw, 132px); }
 .project-gallery img {
   display: block;
   width: 100%;
@@ -118,7 +111,6 @@ body.project-page::before { display: none; }
   .project-hero img { object-position: 57% center; }
   .project-intro { padding: 48px 20px 56px; }
   .project-intro h1 { font-size: 28px; }
-  .project-intro__category { margin-top: 16px; }
   .project-gallery { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
