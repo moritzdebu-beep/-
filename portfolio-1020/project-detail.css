@@ -34,7 +34,7 @@ body.project-page::before { display: none; }
   object-position: center;
 }
 .project-intro {
-  padding: clamp(64px, 6.1vw, 104px) 24px clamp(80px, 9.2vw, 144px);
+  padding: clamp(96px, 9.4vw, 152px) 24px clamp(48px, 5.9vw, 96px);
   text-align: center;
 }
 .project-intro h1 {
@@ -51,7 +51,7 @@ body.project-page::before { display: none; }
 }
 .project-gallery {
   display: grid;
-  gap: 4px;
+  gap: clamp(54px, 9.2vw, 132px);
   width: 75%;
   max-width: 1180px;
   margin-inline: auto;
@@ -109,7 +109,7 @@ body.project-page::before { display: none; }
   .project-page .primary-nav [lang|="zh"] { font-size: 12px; }
   .project-hero { aspect-ratio: 1; }
   .project-hero img { object-position: 57% center; }
-  .project-intro { padding: 48px 20px 56px; }
+  .project-intro { padding: 72px 20px 32px; }
   .project-intro h1 { font-size: 28px; }
   .project-gallery { width: 100%; }
 }
