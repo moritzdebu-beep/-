@@ -231,6 +231,12 @@ body.home-page {
 }
 
 /* Project captions: the original image stays still beneath each overlay. */
+a.work-item--reveal {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .work-item--reveal {
   position: relative;
   container-type: inline-size;

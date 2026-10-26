@@ -61,15 +61,20 @@ function renderGallery(items) {
 
   items.forEach((item, index) => {
     const figure = document.createElement("figure");
-    const previewButton = document.createElement("button");
+    const previewButton = document.createElement(item.projectUrl ? "a" : "button");
     const image = document.createElement("img");
     figure.className = "teacher-card";
     figure.hidden = true;
     figure.dataset.category = categoryMap[item.category] || "all";
     previewButton.className = "teacher-card__preview work-item--reveal";
-    previewButton.type = "button";
-    previewButton.setAttribute("aria-label", `放大查看：${item.alt}`);
-    previewButton.addEventListener("click", () => openLightbox(index, previewButton));
+    if (item.projectUrl) {
+      previewButton.href = item.projectUrl;
+      previewButton.setAttribute("aria-label", `查看项目：${item.alt}`);
+    } else {
+      previewButton.type = "button";
+      previewButton.setAttribute("aria-label", `放大查看：${item.alt}`);
+      previewButton.addEventListener("click", () => openLightbox(index, previewButton));
+    }
     image.src = `./assets/teacher-works/${item.file}`;
     image.width = item.width;
     image.height = item.height;
@@ -120,7 +125,7 @@ function renderGallery(items) {
     const restoreFocus = finished && document.activeElement === button;
     more.hidden = finished;
     if (restoreFocus) {
-      cards[firstNewIndex]?.querySelector("button").focus({ preventScroll: true });
+      cards[firstNewIndex]?.querySelector("a, button").focus({ preventScroll: true });
     }
   }
 
@@ -144,7 +149,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") updateLightbox(activeLightboxIndex + 1);
 });
 
-fetch("./assets/teacher-works/manifest.json?v=selected-removed-20261026-1")
+fetch("./assets/teacher-works/manifest.json?v=eyestar-detail-20261027")
   .then((response) => {
     if (!response.ok) throw new Error("Unable to load work");
     return response.json();
