@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Service DM Sans";
+  src: url("./assets/service/fonts/dm-sans-medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Service UD Shin Go";
+  src: url("./assets/service/fonts/ud-shin-go-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE6F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "OTO PixelMplus10 Regular";
+  src: url("./assets/service/fonts/pixel-mplus10-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+body.service-page {
+  --site-font-family: "Service DM Sans", "Service UD Shin Go", sans-serif;
+  --service-width: min(76.1394%, 1536px);
+  background: #fff;
+  color: #000;
+}
+.service-page::before { display: none; }
+.service-page .site-header {
+  padding-inline: max(11.9303%, calc((100% - 1536px) / 2));
+  background: #fff;
+}
+.service-page .brand { color: inherit; text-decoration: none; }
+.service-page .primary-nav { min-width: 0; max-width: 100%; }
+.service-main { width: var(--service-width); margin: var(--header-height) auto 0; container-type: inline-size; }
+.service-sheet { --u: calc(100cqw / 1136); padding-block: calc(48 * var(--u)) calc(193 * var(--u)); }
+.service-board { display: grid; grid-template-columns: 575fr 561fr; height: calc(705 * var(--u)); border-top: 1px solid #000; }
+.service-left, .service-right { position: relative; min-width: 0; }
+.service-right { border-left: 1px solid transparent; }
+.service-board.is-wechat-visible .service-right { border-color: #7f7f7f; }
+.service-title {
+  position: absolute;
+  top: calc(32 * var(--u));
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: calc(14 * var(--u));
+  margin: 0;
+  font-size: calc(64 * var(--u));
+  line-height: 1;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+}
+.service-title__text { display: block; }
+.service-page .service-title .pixel-initial { margin-inline-end: 0; }
+.service-envelope { display: block; width: calc(72 * var(--u)); height: calc(53 * var(--u)); overflow: hidden; flex-shrink: 0; }
+.service-envelope image { image-rendering: pixelated; }
+.service-qr { position: absolute; top: calc(380 * var(--u)); left: calc(173 * var(--u)); width: calc(166 * var(--u)); margin: 0; }
+.service-qr[hidden] { display: none; }
+.service-qr figcaption { margin: 0 0 calc(5 * var(--u)); font-size: calc(11 * var(--u)); line-height: calc(16 * var(--u)); letter-spacing: -.04em; text-align: center; white-space: nowrap; }
+.service-qr__code { display: block; width: 100%; height: auto; aspect-ratio: 1; overflow: hidden; }
+.service-clients { position: absolute; top: calc(37 * var(--u)); left: calc(24 * var(--u)); right: 0; }
+.service-clients__copy { margin: 0; font-size: calc(20 * var(--u)); line-height: calc(28 * var(--u)); letter-spacing: -.075em; text-align: justify; text-align-last: left; }
+.service-clients__join { white-space: nowrap; }
+.service-clients__punct { display: inline-block; width: .5em; letter-spacing: 0; }
+.service-clients__logos { display: block; width: 100%; height: auto; aspect-ratio: 538 / 68; margin-top: calc(48 * var(--u)); overflow: hidden; }
+.service-contact { position: absolute; top: calc(379 * var(--u)); left: calc(24 * var(--u)); right: 0; scroll-margin-top: calc(var(--header-height) + 24px); }
+.service-contact h2 { margin: 0; font-size: calc(22 * var(--u)); line-height: calc(27 * var(--u)); letter-spacing: -.055em; }
+.service-contact__english { margin: 0; color: #7f7f7f; font-size: calc(16 * var(--u)); line-height: calc(22 * var(--u)); letter-spacing: -.04em; }
+.service-contact__details { margin-top: calc(42 * var(--u)); font-size: calc(15 * var(--u)); line-height: calc(26 * var(--u)); letter-spacing: -.035em; }
+.service-contact__details p { margin: 0; }
+.service-contact__socials { margin-top: calc(26 * var(--u)); }
+.service-contact a { color: inherit; text-decoration: none; }
+.service-contact a:hover { text-decoration: underline; text-underline-offset: .2em; }
+.service-contact a:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
+.service-wechat-toggle { appearance: none; display: inline; padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-align: inherit; cursor: pointer; }
+.service-wechat-toggle:hover, .service-wechat-toggle[aria-expanded="true"] { text-decoration: underline; text-underline-offset: .2em; }
+.service-wechat-toggle:focus-visible { outline: 1px solid currentColor; outline-offset: 4px; }
+.service-bricks { height: calc(400 * var(--u)); margin-top: calc(110 * var(--u)); overflow: hidden; }
+.service-bricks img { display: block; width: 103.7838%; max-width: none; height: auto; transform: translate(-1.888%, -24.8047%); }
+
+@media (max-width: 1100px) {
+  body.service-page { --service-width: calc(100% - 48px); }
+  .service-page .site-header { padding-inline: 24px; }
+}
+@media (max-width: 767px) {
+  body.service-page { --service-width: calc(100% - 28px); }
+  .service-page .site-header { padding-inline: 14px; }
+  .service-sheet { padding-block: 28px 60px; }
+  .service-board { grid-template-columns: 1fr; height: auto; }
+  .service-left { display: flex; flex-direction: column; align-items: flex-start; padding-block: 26px 36px; }
+  .service-title { position: static; gap: 10px; font-size: clamp(40px, 9vw, 64px); }
+  .service-envelope { width: 48px; height: auto; aspect-ratio: 72 / 53; }
+  .service-qr { position: static; align-self: center; width: 166px; margin-top: 48px; }
+  .service-qr figcaption { margin-bottom: 5px; font-size: 11px; line-height: 16px; }
+  .service-right { padding-top: 28px; border-left: 0; border-top: 1px solid transparent; }
+  .service-clients, .service-contact { position: static; }
+  .service-clients__copy { font-size: 17px; line-height: 1.65; letter-spacing: -.055em; }
+  .service-clients__logos { margin-top: 28px; }
+  .service-contact { margin-top: 56px; }
+  .service-contact h2 { font-size: 22px; line-height: 27px; }
+  .service-contact__english { font-size: 16px; line-height: 22px; }
+  .service-contact__details { margin-top: 36px; font-size: 15px; line-height: 26px; }
+  .service-contact__socials { margin-top: 26px; }
+  .service-bricks { margin-top: 80px; }
+}
+@media (max-width: 480px) {
+  body.service-page { --header-height: 106px; }
+  .service-page .primary-nav { font-size: 12px; }
+  .service-page .site-header { row-gap: 12px; }
+}

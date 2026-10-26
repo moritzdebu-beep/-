@@ -17,7 +17,7 @@ body.student-video-page::before {
   justify-self: end;
   color: #566169;
   font-size: clamp(17px, 1.15vw, 25px);
-  font-weight: 500;
+
   text-decoration: underline;
   text-underline-offset: 0.16em;
 }
@@ -54,9 +54,9 @@ body.student-video-page::before {
   justify-content: space-between;
   gap: 24px;
   margin-top: 12px;
-  font-family: "Inter V", Inter, Arial, sans-serif;
+  font-family: var(--site-font-family);
   font-size: clamp(9px, 0.72vw, 13px);
-  font-weight: 700;
+
   line-height: 1;
 }
 
@@ -152,4 +152,50 @@ body.student-video-page::before {
     display: block;
     margin-top: 6px;
   }
+}
+
+
+html.has-student-video-viewer {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+
+.student-video-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #171717;
+  background: #f8f8f6;
+}
+
+.student-video-dialog::backdrop {
+  background: #f8f8f6;
+}
+
+.student-video-dialog__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 6;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: 32px/1 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.student-video-dialog__close:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
 }

@@ -1,0 +1,147 @@
+/* Scoped to the tray concept on the home page. */
+.home-page--tray::before {
+  background: #fff;
+}
+
+.home-page--tray .page-shell {
+  background: linear-gradient(180deg, #d7ecfd 0%, #d7ecfd 60%, #eaf5fe 84%, #ffffff 100%);
+  width: 100%;
+  height: auto;
+  min-height: 100svh;
+}
+
+.home-page--tray .site-header {
+  color: #111111;
+  mix-blend-mode: normal;
+  background: linear-gradient(180deg, rgb(215 236 253 / 88%) 0%, rgb(215 236 253 / 55%) 68%, rgb(215 236 253 / 0%) 100%);
+}
+
+.home-page--tray .brand__mark {
+  filter: none;
+}
+
+.home-page--tray .primary-nav,
+.home-page--tray .primary-nav a:hover {
+  color: #111111;
+}
+
+.home-page--tray .hero--tray {
+  height: auto;
+  min-height: 100svh;
+  padding: calc(var(--header-height) + 12px) clamp(12px, 2vw, 32px) 24px;
+}
+
+.hero-tray {
+  width: min(94vw, calc((100svh - var(--header-height) - 48px) * 1.5), 1440px);
+  max-width: 100%;
+  aspect-ratio: 3 / 2;
+}
+
+.hero-tray__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .home-page--tray .hero--tray {
+    padding: calc(var(--header-height) + 18px) 10px 28px;
+  }
+
+  .hero-tray {
+    width: min(100%, calc((100svh - var(--header-height) - 50px) * 1.5));
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .home-page--tray .hero--tray {
+    padding-top: calc(var(--header-height) + 4px);
+    padding-bottom: 8px;
+  }
+
+  .hero-tray {
+    width: min(100%, calc((100svh - var(--header-height) - 16px) * 1.5));
+  }
+}
+
+
+/* Lift the rotating artwork while keeping its existing layout space. */
+.home-page--tray .hero-tray {
+  width: min(calc(100vw - 32px), calc((100svh - var(--header-height) - 48px) * 1.53), 1836px);
+  max-width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  translate: 0 calc(-1 * clamp(80px, 14svh, 180px));
+}
+
+.home-page--tray .hero-tray__image {
+  width: 104%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  transform-origin: center;
+  animation: oto-tray-turn 40s linear infinite;
+  will-change: transform;
+}
+
+
+.home-page--tray .hero-tray[data-motion-paused="true"] .hero-tray__image {
+  animation-play-state: paused;
+}
+
+@keyframes oto-tray-turn {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.home-page--tray .scroll-reveal {
+  filter: none;
+  transform: translateY(22px);
+  transition: opacity 1000ms cubic-bezier(.22, 1, .36, 1),
+              transform 1000ms cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.home-page--tray .scroll-reveal.is-visible {
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page--tray .hero-tray__image { animation: none; will-change: auto; }
+  .home-page--tray .scroll-reveal,
+  .home-page--tray .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+
+/* Align the full-width header contents with the gallery columns. */
+.home-page--tray .site-header {
+  padding-inline: max(
+    var(--catalog-inline-padding),
+    calc((100% - var(--catalog-max-width)) / 2 + var(--catalog-inline-padding))
+  );
+}
+
+.home-page--tray .primary-nav {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Keep the existing two-row phone header and its right-aligned Contact. */
+@media (max-width: 480px) {
+  .home-page--tray .primary-nav {
+    width: 100%;
+    justify-self: stretch;
+    justify-content: space-between;
+    gap: clamp(4px, 2vw, 8px);
+  }
+}

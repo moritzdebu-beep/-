@@ -1,29 +1,43 @@
 @font-face {
-  font-family: "OTO Inter V";
-  src: local("Inter V");
+  font-family: "OTO DM Sans Medium";
+  src: local("DMSans-Medium"), local("DM Sans Medium"), url("./assets/service/fonts/dm-sans-medium.ttf") format("truetype");
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "OTO UD Shin Go";
-  src: local("森泽UD新黑 Gb4 DB");
+  font-family: "OTO UD Shin Go R";
+  src: local("UDShinGoSCGbe-Reg"), local("森泽UD新黑 Gb4 R"), local("MO UDShinGo SC Gb4 R"), url("./assets/service/fonts/ud-shin-go-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE6F, U+FF00-FFEF, U+20000-323AF;
+}
+
+@font-face {
+  font-family: "OTO PixelMplus10 Regular";
+  src: local("PixelMplus10-Regular"), local("PixelMplus10 Regular"), url("./assets/service/fonts/pixel-mplus10-regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 
 :root {
+  --site-font-family: "OTO DM Sans Medium", "OTO UD Shin Go R", sans-serif;
   color-scheme: light;
-  font-family: "OTO Inter V", "Inter V", Inter, Arial, sans-serif;
+  font-family: var(--site-font-family);
   font-synthesis: none;
   --ink: #111111;
-  --header-font-size: calc(var(--brand-mark-width) * 36 / 106 / 0.73);
-  --header-text-color: #d4d4d2;
-  --brand-mark-width: clamp(96px, 6.4vw, 138px);
-  --header-inline-padding: clamp(40px, 5vw, 96px);
-  --header-column-gap: clamp(54px, 7vw, 140px);
+  --header-font-size: clamp(14px, 0.96vw, 24px);
+  --header-text-color: #333333;
+  --header-height: clamp(80px, 5.4vw, 120px);
+  --brand-mark-width: clamp(80px, 5vw, 120px);
+  --brand-font-size: calc(var(--brand-mark-width) * 36 / 106 / 0.73);
+  --brand-studio-color: #d4d4d2;
+  --header-inline-padding: clamp(16px, 2vw, 48px);
+  --header-logo-inset: clamp(16px, 2vw, 48px);
+  --header-column-gap: 48px;
   --type-gray: #61676b;
   --sky: #7ccbdc;
   --sky-soft: #e7f6f9;
@@ -94,8 +108,8 @@ body::before {
   column-gap: var(--header-column-gap);
   align-items: center;
   width: 100%;
-  height: clamp(78px, 6vw, 104px);
-  padding: 0 var(--header-inline-padding);
+  height: var(--header-height);
+  padding: 0 var(--header-inline-padding) 0 var(--header-logo-inset);
   background: transparent;
 }
 
@@ -103,8 +117,8 @@ body::before {
   display: inline-flex;
   justify-self: start;
   align-items: center;
-  gap: clamp(12px, 1vw, 22px);
-  font-size: var(--header-font-size);
+  gap: clamp(10px, 0.8vw, 18px);
+  font-size: var(--brand-font-size);
   line-height: 1;
 }
 
@@ -113,29 +127,30 @@ body::before {
   width: var(--brand-mark-width);
   height: auto;
   flex-shrink: 0;
-  fill: currentColor;
+  object-fit: contain;
 }
 
 .brand__studio {
-  color: var(--header-text-color);
+  color: var(--brand-studio-color);
   font-size: inherit;
   line-height: 1;
   text-box: trim-both cap alphabetic;
-  font-weight: 500;
+
   letter-spacing: -0.025em;
 }
 
 .primary-nav {
   display: flex;
-  gap: clamp(24px, 3vw, 86px);
+  gap: clamp(32px, 5.4vw, 132px);
   align-items: center;
   justify-self: end;
   justify-content: flex-end;
   color: var(--header-text-color);
+  font-family: var(--site-font-family);
   font-size: var(--header-font-size);
-  line-height: 1;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
 }
 
 .primary-nav span,
@@ -144,17 +159,46 @@ body::before {
   white-space: nowrap;
 }
 
-.primary-nav a {
+.primary-nav a,
+.primary-nav__item {
+  --nav-link-padding-block: 10px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding-block: var(--nav-link-padding-block);
   color: inherit;
   text-decoration: none;
-  text-box: trim-both cap alphabetic;
+}
+
+.primary-nav [lang|="zh"] {
+  font-family: var(--site-font-family);
+  letter-spacing: 0;
+}
+
+.primary-nav a:hover {
+  color: #111111;
+}
+
+.primary-nav a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
 }
 
 .primary-nav .is-active {
   color: var(--header-text-color);
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0.22em;
+  text-decoration: none;
+}
+
+/* One line spans the whole bilingual link, including the flex gap. */
+.primary-nav a.is-active::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: calc(var(--nav-link-padding-block) - 0.18em);
+  height: 1px;
+  background: currentColor;
+  pointer-events: none;
 }
 
 .contact-pill {
@@ -170,7 +214,7 @@ body::before {
   background: var(--pill);
   box-shadow: 0 6px 16px rgba(38, 136, 199, 0.14);
   font-size: clamp(17px, 1.15vw, 25px);
-  font-weight: 500;
+
   cursor: default;
   user-select: none;
 }
@@ -251,7 +295,7 @@ body::before {
   align-items: flex-start;
   margin: 0;
   font-size: clamp(38px, 3.45vw, 72px);
-  font-weight: 500;
+
   line-height: 0.96;
   letter-spacing: -0.055em;
 }
@@ -278,12 +322,12 @@ body::before {
 
 .catalog-heading strong {
   color: #d4d4d2;
-  font-weight: 500;
+
 }
 
 .catalog-heading span {
   color: #d4d4d2;
-  font-weight: 500;
+
 }
 
 .catalog-meta p:first-child {
@@ -301,7 +345,7 @@ body::before {
 .work-item p {
   margin: 0;
   font-size: 11px;
-  font-weight: 500;
+
   line-height: 1.35;
   text-transform: uppercase;
 }
@@ -438,7 +482,7 @@ body::before {
   max-width: 100%;
   color: #1b1b1b;
   font-size: clamp(28px, 2.35vw, 48px);
-  font-weight: 650;
+
   line-height: 1;
   letter-spacing: -0.045em;
   text-decoration: none;
@@ -446,7 +490,7 @@ body::before {
 }
 
 .portal-arrow {
-  font-weight: 400;
+
 }
 
 .studio-info {
@@ -478,7 +522,7 @@ body::before {
 .studio-info__header h2 {
   margin: 0;
   font-size: clamp(34px, 2.7vw, 54px);
-  font-weight: 550;
+
   line-height: 0.95;
   letter-spacing: -0.055em;
 }
@@ -529,7 +573,7 @@ body::before {
 
 .studio-info__contact {
   font-size: clamp(19px, 1.35vw, 27px);
-  font-weight: 500;
+
   line-height: 1.08;
 }
 
@@ -552,54 +596,44 @@ body::before {
   box-shadow: none;
 }
 
-@supports (height: 1cap) {
-  .brand__mark {
-    width: auto;
-    height: 1cap;
-  }
-}
-
 @supports not (text-box: trim-both cap alphabetic) {
-  .brand__studio,
-  .primary-nav a {
+  .brand__studio {
     transform: translateY(0.055em);
   }
 }
 
-@media (min-width: 769px) and (max-width: 1600px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   :root {
-    --header-column-gap: 16px;
-    --header-inline-padding: 16px;
+    --header-column-gap: 32px;
+    --header-inline-padding: clamp(16px, 2vw, 48px);
   }
 
   .primary-nav {
-    gap: clamp(16px, 2vw, 22px);
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1280px) {
-  :root {
-    --brand-mark-width: clamp(56px, 7.2vw, 96px);
+    gap: 4vw;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --brand-mark-width: 78px;
+    --brand-mark-width: 64px;
+    --header-font-size: 14px;
+    --header-height: 72px;
+    --header-inline-padding: 16px;
+    --header-logo-inset: 16px;
+    --header-column-gap: 16px;
   }
 
   .site-header {
-    grid-template-columns: 1fr;
-    height: 70px;
-    padding-inline: 16px;
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
   .brand {
-    gap: 9px;
+    gap: 7px;
   }
 
   .primary-nav {
-    display: none;
+    display: flex;
+    gap: 12px;
   }
 
   .contact-pill {
@@ -610,7 +644,7 @@ body::before {
   }
 
   .hero {
-    padding: 70px 0 0;
+    padding: var(--header-height) 0 0;
   }
 
   .hero-sign {
@@ -618,6 +652,53 @@ body::before {
     transform: translateY(1vh);
   }
 
+}
+
+@media (max-width: 680px) {
+  .primary-nav a,
+  .primary-nav__item {
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    grid-template-rows: auto auto;
+    align-content: center;
+    row-gap: 6px;
+  }
+
+  .primary-nav {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .primary-nav a,
+  .primary-nav__item {
+    --nav-link-padding-block: 0px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --brand-mark-width: 56px;
+    --header-font-size: 13px;
+    --header-inline-padding: 12px;
+    --header-logo-inset: 12px;
+    --header-column-gap: 12px;
+  }
+
+  .primary-nav {
+    gap: 8px;
+  }
+}
+
+.studio-info {
+  scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -765,15 +846,7 @@ body::before {
   }
 }
 
-body * {
-  font-weight: 700 !important;
-}
 
-body [lang|="zh"],
-body [lang|="zh"] * {
-  font-family: "OTO UD Shin Go", "森泽UD新黑 Gb4 DB", "Microsoft YaHei", sans-serif;
-  font-weight: 400 !important;
-}
 
 .scroll-reveal {
   opacity: 0;
@@ -800,5 +873,87 @@ body [lang|="zh"] * {
     filter: none;
     transform: none;
     transition: none;
+  }
+}
+
+/* One typography system: DM Sans Medium for Latin, UD Shin Go R for CJK. */
+body,
+body * {
+  font-family: var(--site-font-family) !important;
+  font-weight: 500 !important;
+  font-synthesis: none;
+}
+
+body :lang(zh) {
+  font-weight: 400 !important;
+}
+
+oto-pixel-text,
+oto-pixel-initial {
+  display: inline;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+body .pixel-initial {
+  font-family: "OTO PixelMplus10 Regular", var(--site-font-family) !important;
+  font-weight: 400 !important;
+  margin-inline-end: 0.075em;
+}
+
+/* The reference pixel arrow is a native cursor; no tracking overlay is needed. */
+@media (hover: hover) and (pointer: fine) {
+  body .work-item--reveal,
+  body .work-item--reveal *,
+  body .teacher-card__preview,
+  body .teacher-card__preview *,
+  body .student-work-card img,
+  body .student-work-card.is-paired img {
+    cursor: url("./assets/cursor-pixel-hand-v2.png") 9 3, pointer !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    --oto-pixel-cursor: url("./assets/cursor-pixel-arrow-v1.png") 2 2;
+    cursor: var(--oto-pixel-cursor), auto;
+  }
+
+  body a,
+  body button,
+  body [role="button"],
+  body summary,
+  body select,
+  body label,
+  body .contact-pill,
+  body.course-info-page .contact-pill,
+  body .work-filters button,
+  body .teacher-card__preview,
+  body .work-lightbox__close,
+  body .work-lightbox__nav,
+  body .student-work-card img,
+  body .student-work-card.is-paired img,
+  body .student-lightbox,
+  body .student-lightbox__figure,
+  body .student-lightbox__close,
+  body .student-lightbox__arrow,
+  body .student-motion-card__button,
+  body .student-video-viewer__arrow {
+    cursor: var(--oto-pixel-cursor), pointer;
+  }
+
+  body input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="hidden"]),
+  body textarea,
+  body [contenteditable]:not([contenteditable="false"]),
+  body [contenteditable]:not([contenteditable="false"]) * {
+    cursor: text;
+  }
+
+  body :disabled,
+  body [aria-disabled="true"] {
+    cursor: not-allowed;
   }
 }

@@ -18,9 +18,34 @@ document.title = `AIGC Motion ${paddedIndex} — OTO Studio`;
 
 video.play().catch(() => {});
 
+const videoViewer = document.querySelector(".student-video-viewer");
+const studentWorksLink = document.querySelector(".student-video-viewer__meta a");
+
+function closeStudentVideo() {
+  video.pause();
+  window.location.assign(studentWorksLink.href);
+}
+
+// Require the gesture to start and end on the backdrop, away from media controls.
+let startedOnVideoBackdrop = false;
+videoViewer.addEventListener("pointerdown", (event) => {
+  startedOnVideoBackdrop = event.isPrimary && event.button === 0 && event.target === videoViewer;
+});
+videoViewer.addEventListener("pointercancel", () => {
+  startedOnVideoBackdrop = false;
+});
+videoViewer.addEventListener("click", (event) => {
+  const shouldClose = startedOnVideoBackdrop && event.button === 0 && event.target === videoViewer;
+  startedOnVideoBackdrop = false;
+  if (shouldClose) closeStudentVideo();
+});
+
 document.addEventListener("keydown", (event) => {
   if (!document.body.classList.contains("student-video-page")) return;
   if (event.key === "ArrowLeft") window.otoNavigate?.(previousLink.href);
   if (event.key === "ArrowRight") window.otoNavigate?.(nextLink.href);
-  if (event.key === "Escape") window.otoNavigate?.("./student-homework.html#student-motion");
+  if (event.key === "Escape" && !document.fullscreenElement) {
+    event.preventDefault();
+    closeStudentVideo();
+  }
 });

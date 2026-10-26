@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" shape-rendering="crispEdges">
+  <defs>
+    <pattern id="checks" width="2" height="2" patternUnits="userSpaceOnUse">
+      <path fill="#f2ff58" d="M0 0h2v2H0z"/>
+      <path fill="#f6f6ed" d="M0 0h1v1H0zM1 1h1v1H1z"/>
+    </pattern>
+  </defs>
+  <g fill="#7e7e79" opacity=".55" transform="translate(2 1)">
+    <path d="M7 0h8v1h1v1h1v1h13v1h1v21H5v-1H4V3h1V2h1V1h1z"/>
+    <path d="M1 8h24v1h1v3h1v3h1v3h1v3h1v4H5v-1H4v-3H3v-3H2v-3H1v-3H0V9h1z"/>
+  </g>
+  <path fill="#080807" d="M7 0h8v1h1v1h1v1h13v1h1v21H5v-1H4V3h1V2h1V1h1z"/>
+  <path fill="url(#checks)" d="M7 1h8v1h1v1h1v1h13v19H5V4h1V2h1z"/>
+  <path fill="#080807" d="M1 8h24v1h1v3h1v3h1v3h1v3h1v4H5v-1H4v-3H3v-3H2v-3H1v-3H0V9h1z"/>
+  <path fill="url(#checks)" d="M1 9h24v3h1v3h1v3h1v3h1v3H5v-3H4v-3H3v-3H2v-3H1z"/>
+  <path fill="#89932e" opacity=".45" d="M5 23h24v1H5z"/>
+</svg>

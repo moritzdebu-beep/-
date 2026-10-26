@@ -16,7 +16,7 @@ body.about-page::before {
   position: fixed;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: var(--header-column-gap);
-  padding-inline: var(--header-inline-padding);
+  padding-inline: var(--header-logo-inset) var(--header-inline-padding);
   color: #111111;
   background: transparent;
   backdrop-filter: none;
@@ -32,19 +32,12 @@ body.about-page::before {
 }
 
 .about-page .brand__studio {
-  color: var(--header-text-color);
+  color: var(--brand-studio-color);
 }
 
 .about-page .primary-nav {
   justify-self: end;
   justify-content: flex-end;
-}
-
-.about-page .primary-nav .is-active {
-  color: var(--header-text-color);
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0.22em;
 }
 
 .about-main {
@@ -70,9 +63,9 @@ body.about-page::before {
 .about-intro h1 {
   max-width: 1100px;
   margin: 0;
-  font-family: "OTO Inter V", "Inter V", Inter, Arial, sans-serif;
+  font-family: var(--site-font-family);
   font-size: clamp(30px, 2.8vw, 54px);
-  font-weight: 600 !important;
+
   line-height: 1.08;
   letter-spacing: -0.055em;
   text-align: justify;
@@ -154,7 +147,7 @@ body.about-page::before {
 .about-brands h2 {
   margin: 0;
   font-size: clamp(25px, 2.1vw, 41px);
-  font-weight: 600 !important;
+
   line-height: 1;
   letter-spacing: -0.045em;
 }
@@ -207,8 +200,8 @@ body.about-page::before {
 
 @media (max-width: 768px) {
   .about-page .site-header {
-    grid-template-columns: 1fr;
-    padding-inline: 16px;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding-inline: var(--header-logo-inset) var(--header-inline-padding);
   }
 
   .about-hero {

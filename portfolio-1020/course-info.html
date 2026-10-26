@@ -1,219 +1,131 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" id="top">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f8f8f6" />
-    <meta name="description" content="OTO Studio AIGC packaging design course information." />
-    <title>Course Info — OTO Studio</title>
-    <link rel="stylesheet" href="./styles.css?v=clean-ui-20261024" />
-    <link rel="stylesheet" href="./course-info.css?v=nav-align-20261024" />
-    <script src="./script.js?v=clean-ui-20261024" defer></script>
-    <script src="./course-logo.js?v=oto-morph-5" defer></script>
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="OTO Studio 刺猬 AIGC全流程包装设计系统班，19节直播与27节福利录播。查看课程介绍、课程目录、讲师介绍及学员作品。" />
+    <title>Course 课程 — OTO Studio</title>
+    <link rel="stylesheet" href="./styles.css?v=pixel-spacing-tight-20261026" />
+    <link rel="stylesheet" href="./course-info.css?v=seamless-images-20261026" />
+    <link rel="stylesheet" href="./studio-footer.css?v=pixel-up-arrow-20261026" />
+    <script src="./script.js?v=hover-plain-english-20261026" defer></script>
+    <script src="./course-info.js?v=course-detail-layout-20261026" defer></script>
   </head>
   <body class="course-info-page">
     <header class="site-header" lang="en">
       <a class="brand" href="./index.html" aria-label="OTO Studio home">
-        <svg class="brand__mark" viewBox="0 0 106 36" role="img" aria-labelledby="course-brand-title">
-          <title id="course-brand-title">OTO</title>
-          <circle cx="18" cy="18" r="18" />
-          <path d="M39 3h28v11h-8v19H47V14h-8z" />
-          <circle cx="88" cy="18" r="18" />
-        </svg>
-        <span class="brand__studio" data-editable data-edit-key="brand-studio">Studio</span>
+        <img class="brand__mark" src="./assets/brand-oto-black.svg" alt="OTO" width="170" height="52" />
       </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="./work.html" data-editable data-edit-key="nav-work-v2">WORK</a>
-        <a href="./student-homework.html" data-editable data-edit-key="nav-homework-v3">HOMEWORK</a>
-        <a class="is-active" href="./course-info.html" aria-current="page" data-editable data-edit-key="nav-course-v3">COURSE</a>
-        <a href="./about.html" data-editable data-edit-key="nav-about-me-v1">ABOUT ME</a>
+        <a href="./work.html"><span lang="en">Work</span> <span lang="zh-CN">案例</span></a>
+        <a href="./service.html"><span lang="en">Service</span> <span lang="zh-CN">业务</span></a>
+        <a href="./student-homework.html"><span lang="en">Student Work</span> <span lang="zh-CN">学生作品</span></a>
+        <a class="is-active" aria-current="page" href="./course-info.html"><span lang="en">Course</span> <span lang="zh-CN">课程</span></a>
+        <a href="#studio"><span lang="en">Contact</span> <span lang="zh-CN">联系</span></a>
       </nav>
 
     </header>
 
-    <div class="course-logo-morph" aria-hidden="true">
-      <svg viewBox="0 0 360 120" focusable="false">
-        <path data-oto-morph="left" />
-        <path data-oto-morph="middle" />
-        <path data-oto-morph="right" />
-      </svg>
-    </div>
-
     <main class="course-main">
-      <section class="course-layout" aria-labelledby="course-title">
-        <h1 id="course-title" lang="en">
-          <img class="course-title__icon" src="./assets/course-writing-hand.png" width="1254" height="1254" alt="" />
-          <span data-editable data-edit-key="course-page-title">COURSE</span>
-        </h1>
+      <section class="course-hero" aria-label="包装设计系统班">
+        <img class="course-hero__art" src="./assets/course/course-banner.png" alt="包装系统班 Packaging Design AIGC" width="9082" height="1568" fetchpriority="high" decoding="async" />
+      </section>
 
-        <div class="course-content" lang="zh-CN">
-          <div class="course-introduction">
-            <p data-editable data-edit-key="course-introduction">
-              从包装基础、创意策略到三维建模与动态呈现，系统学习品牌包装设计，并把 AIGC 工具真正纳入完整工作流程。
-            </p>
-            <a href="mailto:824134319@qq.com" data-editable data-edit-key="course-quote">咨询课程</a>
+      <section class="course-container course-summary" aria-label="课程信息与报名" data-pixel-initials="off">
+        <div class="course-summary__overview">
+          <p class="course-summary__count">19 节直播 <span aria-hidden="true">/</span> 27 节福利录播</p>
+          <p class="course-summary__description">从包装基础、创意策略到三维渲染与动态呈现，把 AIGC 融入完整设计流程。</p>
+        </div>
+        <div class="course-summary__enroll">
+          <p class="course-price"><span class="course-price__label">早鸟价</span><span class="course-price__amount"><small>¥</small>1999</span><del>¥2199</del></p>
+          <div class="course-actions">
+            <a class="course-button course-button--primary" href="https://www.gogoup.com/course/GMzc1Nw==" target="_blank" rel="noopener noreferrer">查看课程与报名 <span aria-hidden="true">↗</span></a>
+            <a class="course-button course-button--secondary" href="#studio">咨询课程</a>
           </div>
-
-          <div class="course-accordion">
-            <article class="course-item">
-              <h2 class="course-item__heading">
-                <span data-editable data-edit-key="course-section-overview">课程总览</span>
-              </h2>
-              <div class="course-item__panel" id="course-panel-overview">
-                <p data-editable data-edit-key="course-overview-copy">
-                  19节直播课程，32节福利录播。课程结合 DeepSeek、ChatGPT、Codex、豆包、Recraft、即梦、Lovart、Liblib 等多平台工具，覆盖包装设计、AIGC生成、三维渲染、动态视觉与网页作品集制作。
-                </p>
-              </div>
-            </article>
-
-            <article class="course-item">
-              <h2 class="course-item__heading">
-                <span data-editable data-edit-key="course-section-modules">AIGC 六大核心模块</span>
-              </h2>
-              <div class="course-item__panel" id="course-panel-modules">
-                <ol class="course-module-list">
-                  <li data-editable data-edit-key="course-module-01">产品设定与模型生成</li>
-                  <li data-editable data-edit-key="course-module-02">包装场景效果生成</li>
-                  <li data-editable data-edit-key="course-module-03">创意与策略概念生成</li>
-                  <li data-editable data-edit-key="course-module-04">插画与造型素材生成</li>
-                  <li data-editable data-edit-key="course-module-05">产品动态效果生成</li>
-                  <li data-editable data-edit-key="course-module-06">Codex 网页作品集制作</li>
-                </ol>
-              </div>
-            </article>
-
-            <article class="course-item">
-              <h2 class="course-item__heading">
-                <span data-editable data-edit-key="course-section-live">19节直播课程大纲</span>
-              </h2>
-              <div class="course-item__panel" id="course-panel-live">
-                <ol class="course-live-list">
-                  <li data-editable data-edit-key="course-live-01">包装纯文字排版基础</li>
-                  <li data-editable data-edit-key="course-live-02">网格系统与包装版面</li>
-                  <li data-editable data-edit-key="course-live-03">AIGC设计工作流思维与实操</li>
-                  <li data-editable data-edit-key="course-live-04">AIGC包装模型生成与控图技巧</li>
-                  <li data-editable data-edit-key="course-live-05">AIGC包装材质控制渲染与场景生成</li>
-                  <li data-editable data-edit-key="course-live-06">点线与几何构成基础包装</li>
-                  <li data-editable data-edit-key="course-live-07">AIGC字体设计结合包装</li>
-                  <li data-editable data-edit-key="course-live-08">AIGC模型训练与造型生成</li>
-                  <li data-editable data-edit-key="course-live-09">AIGC平面造型构成类包装</li>
-                  <li data-editable data-edit-key="course-live-10">AIGC插画造型类包装</li>
-                  <li data-editable data-edit-key="course-live-11">AIGC摄影图片主题包装</li>
-                  <li data-editable data-edit-key="course-live-12">AIGC创意构成包装思维与实操</li>
-                  <li data-editable data-edit-key="course-live-13">Codex包装工作流建立</li>
-                  <li data-editable data-edit-key="course-live-14">Codex设计语言转化</li>
-                  <li data-editable data-edit-key="course-live-15">Codex方案批量探索</li>
-                  <li data-editable data-edit-key="course-live-16">品牌包装动态视觉设计</li>
-                  <li data-editable data-edit-key="course-live-17">包装动画创意与导演思维</li>
-                  <li data-editable data-edit-key="course-live-18">商业级包装展示动画</li>
-                  <li data-editable data-edit-key="course-live-19">Codex网页作品集制作</li>
-                </ol>
-              </div>
-            </article>
-
-            <article class="course-item">
-              <h2 class="course-item__heading">
-                <span data-editable data-edit-key="course-section-recorded">32节福利录播</span>
-              </h2>
-              <div class="course-item__panel" id="course-panel-recorded">
-                <div class="course-recorded-grid">
-                  <section>
-                    <h2 data-editable data-edit-key="course-recorded-c4d">C4D包装建模与AIGC渲染</h2>
-                    <p data-editable data-edit-key="course-recorded-c4d-copy">建模基础、包装盒型、UV展开、Octane渲染、灯光表现、材质工艺与AIGC场景合成。</p>
-                  </section>
-                  <section>
-                    <h2 data-editable data-edit-key="course-recorded-print">印刷与工艺</h2>
-                    <p data-editable data-edit-key="course-recorded-print-copy">印刷文件、盒型设计、CMYK与专色、包装印刷、保护性与装饰性工艺。</p>
-                  </section>
-                  <section>
-                    <h2 data-editable data-edit-key="course-recorded-extra">录播专题</h2>
-                    <p data-editable data-edit-key="course-recorded-extra-copy">文本审核规范、OC渲染、矢量插画、商业思维、作品集与设计师个人IP运营。</p>
-                  </section>
-                </div>
-              </div>
-            </article>
-
-            <article class="course-item course-faq">
-              <h2 class="course-item__heading">
-                <span data-editable data-edit-key="course-section-faq">课程服务 &amp; 问题解答</span>
-              </h2>
-              <div class="course-item__panel" id="course-panel-faq">
-                <div class="course-faq-grid">
-                  <section>
-                    <h3><span>01</span><span data-editable data-edit-key="course-faq-title-01">上课方式</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-01">公司官网授课<br />每人拥有独立账号</p>
-                  </section>
-                  <section>
-                    <h3><span>02</span><span data-editable data-edit-key="course-faq-title-02">课程时长</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-02">包装全流程AIGC结合<br />共计19节直播，50天左右</p>
-                  </section>
-                  <section>
-                    <h3><span>03</span><span data-editable data-edit-key="course-faq-title-03">上课时间</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-03">每周1、3、5<br />晚20:00–22:00</p>
-                  </section>
-                  <section>
-                    <h3><span>04</span><span data-editable data-edit-key="course-faq-title-04">支持退课</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-04">支持随时退课退款<br />按课时扣除对应比例</p>
-                  </section>
-                  <section>
-                    <h3><span>05</span><span data-editable data-edit-key="course-faq-title-05">作业点评</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-05">课程全程由主讲老师<br />一对一点评精细辅导</p>
-                  </section>
-                  <section>
-                    <h3><span>06</span><span data-editable data-edit-key="course-faq-title-06">零基础可以学习吗？</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-06">可以的。课前会安排安装软件<br />及预习软件基础教学视频</p>
-                  </section>
-                  <section>
-                    <h3><span>07</span><span data-editable data-edit-key="course-faq-title-07">直播回放</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-07">每节课均自动生成<br />录播可官网保留2年</p>
-                  </section>
-                  <section>
-                    <h3><span>08</span><span data-editable data-edit-key="course-faq-title-08">教包装落地吗？</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-08">有的。由资深印刷厂老师录制<br />包装印刷落地系统知识录播</p>
-                  </section>
-                  <section>
-                    <h3><span>09</span><span data-editable data-edit-key="course-faq-title-09">AI工具安装复杂吗</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-09">使用AIGC平台<br />无需安装，易上手</p>
-                  </section>
-                  <section>
-                    <h3><span>10</span><span data-editable data-edit-key="course-faq-title-10">可以成团吗？</span></h3>
-                    <p data-editable data-edit-key="course-faq-copy-10">可以的。<br />两人成团各减100元</p>
-                  </section>
-                </div>
-              </div>
-            </article>
-          </div>
+        </div>
+        <div class="course-software">
+          <p>课程使用工具</p>
+          <ul><li>DeepSeek</li><li>ChatGPT</li><li>Codex</li><li>豆包</li><li>Recraft</li><li>即梦</li><li>Lovart</li><li>LiblibAI</li></ul>
         </div>
       </section>
 
+      <div class="course-container course-detail">
+        <nav class="course-tabs" aria-label="课程内容导航" data-pixel-initials="off">
+          <div class="course-tabs__links">
+            <a class="is-current" href="#course-introduction" data-course-section aria-current="location">课程介绍</a>
+            <a href="#course-curriculum" data-course-section>课程目录</a>
+            <a href="#course-teacher" data-course-section>讲师介绍</a>
+            <a href="#course-questions" data-course-section>常见问题</a>
+            <a href="#course-student-work" data-course-section>学员作品</a>
+          </div>
+          <a class="course-tabs__contact" href="#course-enrollment">报名咨询 <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="course-reader" data-pixel-initials="off">
+          <section id="course-introduction" class="course-image-section" data-course-section aria-label="课程介绍与AIGC六大核心模块">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-01.png" alt="包装系统班：包装素材一键生成，全流程AIGC结合" width="1500" height="1291" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-02.png" alt="AIGC六大模块：产品设定与模型生成、包装场景效果生成、创意与策略概念、插画与造型素材、产品动态效果、Codex网页作品集" width="1501" height="3848" loading="lazy" decoding="async" /></div>
+          </section>
+          <section id="course-curriculum" class="course-image-section" data-course-section aria-label="课程目录：19节直播与27节福利录播">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-03.png" alt="19节直播课程大纲：包装排版、网格、AIGC工作流、模型生成、材质渲染、字体与插画、Codex工作流、包装动态视觉和网页作品集" width="1501" height="2725" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-04.png" alt="27节福利录播：C4D包装建模与AIGC渲染、印刷与工艺、文本审核、OC渲染、矢量插画、商业思维与作品集" width="1501" height="4337" loading="lazy" decoding="async" /></div>
+          </section>
+          <section id="course-teacher" class="course-image-section" data-course-section aria-label="讲师介绍">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-05.png" alt="讲师刺猬：主讲包装设计，ONETWOONE设计主理人、站酷推荐设计师、高高手签约合作讲师" width="1500" height="1158" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-06.png" alt="讲师的品牌包装设计作品与站酷作品展示" width="1500" height="1801" loading="lazy" decoding="async" /></div>
+          </section>
+          <section id="course-schedule" class="course-image-section" aria-label="课程时间排期">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-07.png" alt="课程资料中的时间排期：9月2日拉群，9月3至6日预习，9月7日首课；可联系老师确认当前班期" width="1500" height="2817" loading="lazy" decoding="async" /></div>
+          </section>
+          <section id="course-questions" class="course-image-section" data-course-section aria-label="课程服务与常见问题">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-08.png" alt="课程服务与问题解答：上课方式、课时安排、作业点评、课前预习、直播回放和包装印刷落地" width="1501" height="2102" loading="lazy" decoding="async" /></div>
+          </section>
+          <section id="course-enrollment" class="course-image-section" aria-label="课程费用与报名方式">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-09.png" alt="课程费用与报名方式：原价2199元，早鸟价1999元，两人成团再减100元，图中附报名咨询二维码" width="1501" height="2129" loading="lazy" decoding="async" /></div>
+          </section>
+          <section id="course-student-work" class="course-image-section" data-course-section aria-label="学员作品展示">
+            <div class="course-image-slice"><img src="./assets/course/course-detail-10.png" alt="学员品牌包装设计作品展示，第一组" width="1500" height="6874" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-11.png" alt="学员品牌包装设计作品展示，第二组" width="1501" height="6877" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-12.png" alt="学员品牌包装设计作品展示，第三组" width="1500" height="6874" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-13.png" alt="学员品牌包装设计作品展示，第四组" width="1500" height="6874" loading="lazy" decoding="async" /></div>
+            <div class="course-image-slice"><img src="./assets/course/course-detail-14.png" alt="学员品牌包装设计作品展示，第五组：清荷礼盒与香氛设计" width="1502" height="6883" loading="lazy" decoding="async" /></div>
+          </section>
+        </div>
+      </div>
     </main>
 
-    <section class="studio-info" id="studio" aria-label="OTO Studio information">
-      <header class="studio-info__header">
-        <h2 data-editable data-edit-key="studio-title">OTO Studio</h2>
-        <nav class="studio-info__nav" aria-label="Studio information navigation">
-          <a href="./work.html" data-editable data-edit-key="studio-nav-work">Work,</a>
-          <span data-editable data-edit-key="studio-nav-clients">Clients,</span>
-          <span data-editable data-edit-key="studio-nav-about">About,</span>
-        </nav>
-        <a class="studio-info__project" href="mailto:824134319@qq.com" data-editable data-edit-key="studio-project">Start a project</a>
-      </header>
+    <footer class="studio-footer" id="studio" aria-label="OTO Studio 联系方式" data-pixel-initials="off">
+      <div class="studio-footer__grid">
+        <h2 class="studio-footer__brand"><a href="#top" aria-label="OTO Studio，返回顶部"><span>OTO <oto-pixel-initial class="pixel-initial">S</oto-pixel-initial>tudio</span><img class="studio-footer__back-top-icon" src="./assets/emoji/back-to-top-pixel-green.svg" alt="" aria-hidden="true" width="44" height="52" /></a></h2>
 
-      <div class="studio-info__body">
-        <p class="studio-info__contact">
-          <span lang="zh-CN" data-editable data-edit-key="studio-xiaohongshu">小红书﹕@817刺猬包装设计</span>
-          <span lang="zh-CN" data-editable data-edit-key="studio-email">邮箱﹕824134319@qq.com</span>
-          <span lang="zh-CN" data-editable data-edit-key="studio-wechat">微信﹕ciwei8171</span>
-          <span lang="zh-CN" data-editable data-edit-key="studio-address">地址﹕江西省南昌市</span>
-        </p>
-        <p class="studio-info__clients">
-          <span data-editable data-edit-key="studio-clients-a">Tencent, Baidu, Alibaba Group, JD.com, Pacific Insurance, Ping An Bank, Gree Group, Huaxizi, Zhankuwang, Bosideng, Yanzhiwu, Deli Stationery</span>
-          <span data-editable data-edit-key="studio-clients-b">Shanghai Zhangjiang Group, Green Fund, Beiyang Meitian Medical, Titanium Medical, Zhongyuan Consumer Finance, Daxin Diwei Group, Hunan International Convention and Exhibition Center ..</span>
-        </p>
+        <div class="studio-footer__column" lang="zh-CN">
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">业务咨询</p>
+            <p class="studio-footer__phone"><span class="studio-footer__value">13155802318</span><span>（黄先生）</span></p>
+          </div>
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">课程咨询</p>
+            <p><span class="studio-footer__value">ciwei8172</span></p>
+          </div>
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">微信</p>
+            <p><span class="studio-footer__value">ciwei8172</span></p>
+          </div>
+        </div>
+
+        <div class="studio-footer__column" lang="zh-CN">
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">小红书</p>
+            <p><a href="https://www.xiaohongshu.com/user/profile/5e0aed160000000001009abf?xsec_token=ABRP4fhn55OpCWtrfLSJ9UpO2tqJ-iPv4dSDnoFyFW_JU%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">817刺猬包装设计</a></p>
+          </div>
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">站酷</p>
+            <p><a href="https://www.zcool.com.cn/u/ZNTc0OTQ5MTY=" target="_blank" rel="noopener noreferrer">刺猬OneTwoOne</a></p>
+          </div>
+        </div>
       </div>
-      <img class="studio-info__qr" src="./assets/oto-studio-qr-cutout.png" alt="OTO Studio 二维码" loading="lazy" />
-    </section>
+    </footer>
 
   </body>
 </html>

@@ -27,7 +27,80 @@ function renderCatalogEmoji() {
 
 renderCatalogEmoji();
 
-const revealSelector = ".work-item, .student-work-card, .student-motion-card, .teacher-card";
+// Accent English word initials without changing the underlying text or links.
+(() => {
+  const excluded = 'oto-pixel-text, .work-item__caption, .work-item__subtitle, [data-pixel-initials="off"], script, style, noscript, template, svg, math, canvas, textarea, input, select, option, optgroup, code, pre';
+  const tokens = /(?:https?:\/\/|www\.)[^\s<>]+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|[A-Za-z]+(?:['’][A-Za-z]+)*/g;
+
+  function decorateText(node) {
+    const parent = node.parentElement;
+    if (!parent || parent.isContentEditable || parent.closest(excluded)) return;
+    const text = node.data;
+    if (!/[A-Za-z]/.test(text)) return;
+
+    const wrapper = document.createElement("oto-pixel-text");
+    let offset = 0;
+    let decorated = false;
+    for (const match of text.matchAll(tokens)) {
+      const word = match[0];
+      wrapper.append(text.slice(offset, match.index));
+      if (/^(?:https?:\/\/|www\.)/.test(word) || word.includes("@")) {
+        wrapper.append(word);
+      } else {
+        let start = 0;
+        for (let index = 0; index < word.length; index += 1) {
+          const isInitial = index === 0 || (/[a-z]/.test(word[index - 1]) && /[A-Z]/.test(word[index]));
+          if (!isInitial) continue;
+          wrapper.append(word.slice(start, index));
+          const initial = document.createElement("oto-pixel-initial");
+          initial.className = "pixel-initial";
+          initial.textContent = word[index];
+          wrapper.append(initial);
+          start = index + 1;
+          decorated = true;
+        }
+        wrapper.append(word.slice(start));
+      }
+      offset = match.index + word.length;
+    }
+    if (!decorated) return;
+    wrapper.append(text.slice(offset));
+    node.replaceWith(wrapper);
+  }
+
+  function decorate(root) {
+    if (root.nodeType === Node.TEXT_NODE) {
+      decorateText(root);
+      return;
+    }
+    if (!(root instanceof Element) || root.closest(excluded) || root.isContentEditable) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(decorateText);
+  }
+
+  decorate(document.body);
+  new MutationObserver((changes) => {
+    for (const change of changes) {
+      if (change.type === "characterData") decorate(change.target);
+      else change.addedNodes.forEach(decorate);
+    }
+  }).observe(document.body, { childList: true, subtree: true, characterData: true });
+})();
+
+const revealSelector = [
+  ".work-item", ".student-work-card", ".student-motion-card", ".teacher-card",
+  ".home-page--tray .collection-intro__top",
+  ".home-page--tray .collection-intro__bottom",
+  ".home-page--tray .student-collection__heading",
+  ".home-page--tray .catalog-more",
+  ".home-page--tray .portal-link",
+  ".home-page--tray .studio-footer__grid",
+  ".home-page--tray .studio-info__header",
+  ".home-page--tray .studio-info__body",
+  ".home-page--tray .studio-info__qr",
+].join(", ");
 let revealOrder = 0;
 
 const revealObserver = "IntersectionObserver" in window
@@ -77,3 +150,24 @@ revealMutationObserver.observe(document.body, { childList: true, subtree: true }
 window.otoNavigate = (url) => {
   window.location.href = new URL(url, window.location.href).href;
 };
+
+
+// Keep the slow tray turn at its current angle while it is off screen.
+(() => {
+  const tray = document.querySelector(".home-page--tray .hero-tray");
+  const hero = document.querySelector(".home-page--tray .hero--tray");
+  if (!tray || !hero) return;
+  let inView = true;
+  const updatePlayback = () => {
+    tray.dataset.motionPaused = String(!inView || document.hidden);
+  };
+  if ("IntersectionObserver" in window) {
+    const heroObserver = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      updatePlayback();
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+  }
+  document.addEventListener("visibilitychange", updatePlayback);
+  updatePlayback();
+})();

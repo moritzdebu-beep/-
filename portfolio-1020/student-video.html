@@ -1,33 +1,29 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" id="top">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f8f8f6" />
     <meta name="description" content="OTO Studio student AIGC motion work." />
     <title>Student Motion — OTO Studio</title>
-    <link rel="stylesheet" href="./styles.css?v=clean-ui-20261024" />
-    <link rel="stylesheet" href="./student-video.css?v=student-viewer-footer-2" />
-    <script src="./script.js?v=clean-ui-20261024" defer></script>
-    <script src="./student-video.js?v=student-viewer-2" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=pixel-spacing-tight-20261026" />
+    <link rel="stylesheet" href="./student-video.css?v=intro-dm-udr-20261025" />
+    <link rel="stylesheet" href="./studio-footer.css?v=pixel-up-arrow-20261026" />
+    <script src="./script.js?v=hover-plain-english-20261026" defer></script>
+    <script src="./student-video.js?v=outside-dismiss-20261026" defer></script>
   </head>
   <body class="student-video-page">
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="OTO Studio home">
-        <svg class="brand__mark" viewBox="0 0 106 36" role="img" aria-labelledby="viewer-brand-title">
-          <title id="viewer-brand-title">OTO</title>
-          <circle cx="18" cy="18" r="18" />
-          <path d="M39 3h28v11h-8v19H47V14h-8z" />
-          <circle cx="88" cy="18" r="18" />
-        </svg>
-        <span class="brand__studio">Studio</span>
+        <img class="brand__mark" src="./assets/brand-oto-black.svg" alt="OTO" width="170" height="52" />
       </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="./work.html">WORK</a>
-        <a class="is-active" href="./student-homework.html" aria-current="page">HOMEWORK</a>
-        <a href="./course-info.html">COURSE</a>
-        <a href="./about.html">ABOUT ME</a>
+        <a href="./work.html"><span lang="en">Work</span> <span lang="zh-CN">案例</span></a>
+        <a href="./service.html"><span lang="en">Service</span> <span lang="zh-CN">业务</span></a>
+        <a class="is-active" aria-current="page" href="./student-homework.html"><span lang="en">Student Work</span> <span lang="zh-CN">学生作品</span></a>
+        <a href="./course-info.html"><span lang="en">Course</span> <span lang="zh-CN">课程</span></a>
+        <a href="#studio"><span lang="en">Contact</span> <span lang="zh-CN">联系</span></a>
       </nav>
 
     </header>
@@ -44,30 +40,36 @@
       <a class="student-video-viewer__arrow student-video-viewer__arrow--next" aria-label="下一部作品"></a>
     </main>
 
-    <section class="studio-info" id="studio" aria-label="OTO Studio information">
-      <header class="studio-info__header">
-        <h2>OTO Studio</h2>
-        <nav class="studio-info__nav" aria-label="Studio information navigation">
-          <a href="./work.html">Work,</a>
-          <span>Clients,</span>
-          <span>About,</span>
-        </nav>
-        <a class="studio-info__project" href="mailto:824134319@qq.com">Start a project</a>
-      </header>
+    <footer class="studio-footer" id="studio" aria-label="OTO Studio 联系方式" data-pixel-initials="off">
+      <div class="studio-footer__grid">
+        <h2 class="studio-footer__brand"><a href="#top" aria-label="OTO Studio，返回顶部"><span>OTO <oto-pixel-initial class="pixel-initial">S</oto-pixel-initial>tudio</span><img class="studio-footer__back-top-icon" src="./assets/emoji/back-to-top-pixel-green.svg" alt="" aria-hidden="true" width="44" height="52" /></a></h2>
 
-      <div class="studio-info__body">
-        <p class="studio-info__contact">
-          <span lang="zh-CN">小红书﹕@817刺猬包装设计</span>
-          <span lang="zh-CN">邮箱﹕824134319@qq.com</span>
-          <span lang="zh-CN">微信﹕ciwei8171</span>
-          <span lang="zh-CN">地址﹕江西省南昌市</span>
-        </p>
-        <p class="studio-info__clients">
-          <span>Tencent, Baidu, Alibaba Group, JD.com, Pacific Insurance, Ping An Bank, Gree Group, Huaxizi, Zhankuwang, Bosideng, Yanzhiwu, Deli Stationery</span>
-          <span>Shanghai Zhangjiang Group, Green Fund, Beiyang Meitian Medical, Titanium Medical, Zhongyuan Consumer Finance, Daxin Diwei Group, Hunan International Convention and Exhibition Center ..</span>
-        </p>
+        <div class="studio-footer__column" lang="zh-CN">
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">业务咨询</p>
+            <p class="studio-footer__phone"><span class="studio-footer__value">13155802318</span><span>（黄先生）</span></p>
+          </div>
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">课程咨询</p>
+            <p><span class="studio-footer__value">ciwei8172</span></p>
+          </div>
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">微信</p>
+            <p><span class="studio-footer__value">ciwei8172</span></p>
+          </div>
+        </div>
+
+        <div class="studio-footer__column" lang="zh-CN">
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">小红书</p>
+            <p><a href="https://www.xiaohongshu.com/user/profile/5e0aed160000000001009abf?xsec_token=ABRP4fhn55OpCWtrfLSJ9UpO2tqJ-iPv4dSDnoFyFW_JU%3D&amp;xsec_source=pc_search" target="_blank" rel="noopener noreferrer">817刺猬包装设计</a></p>
+          </div>
+          <div class="studio-footer__entry">
+            <p class="studio-footer__label">站酷</p>
+            <p><a href="https://www.zcool.com.cn/u/ZNTc0OTQ5MTY=" target="_blank" rel="noopener noreferrer">刺猬OneTwoOne</a></p>
+          </div>
+        </div>
       </div>
-      <img class="studio-info__qr" src="./assets/oto-studio-qr-cutout.png" alt="OTO Studio 二维码" loading="lazy" />
-    </section>
+    </footer>
   </body>
 </html>
