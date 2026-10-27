@@ -97,31 +97,80 @@ const studentCards = [];
 let visibleStudentWorkCount = 0;
 studentGrid.id = "student-gallery-projects";
 
-for (let index = 1; index <= 33; index += 1) {
+const studentDetailProjects = {
+  35: {
+    id: "student-wild-sip",
+    href: "./wild-sip.html",
+    image: "./assets/student-projects/wild-sip/04.webp",
+    title: "WILD SIP 精酿啤酒包装设计",
+    subtitle: "Craft Beer Packaging Design",
+    width: 1400,
+    height: 1867,
+  },
+  36: {
+    id: "student-odd-beans",
+    href: "./odd-beans.html",
+    image: "./assets/student-projects/odd-beans/04.webp",
+    title: "ODD BEANS 怪豆司咖啡品牌包装设计",
+    subtitle: "Coffee Branding & Packaging Design",
+    width: 1400,
+    height: 1867,
+  },
+  37: {
+    id: "student-paopao",
+    href: "./paopao.html",
+    image: "./assets/student-projects/paopao/04.webp",
+    title: "PAOPAO 泡个泡泡洗护品牌包装设计",
+    subtitle: "Personal Care Branding & Packaging Design",
+    width: 2918,
+    height: 3890,
+  },
+  34: {
+    id: "student-vinova",
+    href: "./vinova.html",
+    image: "./assets/projects/vinova/vinova-01.webp",
+    title: "VINOVA 太空来信巧克力包装设计",
+    subtitle: "Letters from Space",
+    width: 5834,
+    height: 7709,
+  },
+};
+const studentWorkOrder = [35, 36, 37, 34, ...Array.from({ length: 33 }, (_, index) => index + 1)];
+
+for (const index of studentWorkOrder) {
+  const project = studentDetailProjects[index];
   const category = index > 25
     ? "packaging"
     : studentCategories[Math.min(Math.floor((index - 1) / 7), 3)];
   const figure = document.createElement("figure");
-  const previewButton = document.createElement("button");
+  const previewButton = document.createElement(project ? "a" : "button");
   const image = document.createElement("img");
   const caption = document.createElement("figcaption");
   const paddedIndex = String(index).padStart(2, "0");
-  const primarySource = additionalStudentPairs[index]?.primary ?? `./assets/originals-student/student-${paddedIndex}.png`;
+  const primarySource = project?.image ?? additionalStudentPairs[index]?.primary ?? `./assets/originals-student/student-${paddedIndex}.png`;
   const longFormSource = studentLongFormSources[index];
 
   figure.className = "student-work-card";
   figure.hidden = true;
   figure.dataset.category = category;
   previewButton.className = "student-work-card__preview work-item--reveal";
-  previewButton.type = "button";
-  previewButton.setAttribute("aria-label", longFormSource
-    ? `查看学生作业 ${paddedIndex} 完整长图`
-    : `放大查看学生作业 ${paddedIndex}`);
+  if (project) {
+    figure.id = project.id;
+    previewButton.href = project.href;
+    previewButton.setAttribute("aria-label", `查看${project.title}`);
+    image.width = project.width;
+    image.height = project.height;
+  } else {
+    previewButton.type = "button";
+    previewButton.setAttribute("aria-label", longFormSource
+      ? `查看学生作业 ${paddedIndex} 完整长图`
+      : `放大查看学生作业 ${paddedIndex}`);
+  }
   image.src = primarySource;
-  image.alt = `Student homework ${paddedIndex}`;
+  image.alt = project?.title ?? `Student homework ${paddedIndex}`;
   image.dataset.workIndex = paddedIndex;
   if (longFormSource) image.dataset.longSrc = longFormSource;
-  image.loading = index <= 4 ? "eager" : "lazy";
+  image.loading = studentCards.length < 4 ? "eager" : "lazy";
 
   const overlay = document.createElement("span");
   overlay.className = "work-item__overlay";
@@ -130,14 +179,14 @@ for (let index = 1; index <= 33; index += 1) {
   const title = document.createElement("span");
   title.className = "work-item__title";
   title.lang = "zh-CN";
-  title.textContent = "刺猬包装设计";
+  title.textContent = project?.title ?? "刺猬包装设计";
   const divider = document.createElement("span");
   divider.className = "work-item__divider";
   const subtitle = document.createElement("span");
   subtitle.className = "work-item__subtitle";
   subtitle.lang = "en";
   subtitle.dataset.pixelInitials = "off";
-  subtitle.textContent = "CiWei packaging design";
+  subtitle.textContent = project?.subtitle ?? "CiWei packaging design";
   overlayCaption.append(title, divider, subtitle);
   overlay.append(overlayCaption);
   previewButton.append(image, overlay);
@@ -173,7 +222,7 @@ function loadNextThreeStudentRows() {
   const restoreFocus = finished && document.activeElement === studentMoreButton;
   studentMore.hidden = finished;
   if (restoreFocus) {
-    studentCards[firstNewIndex]?.querySelector("button").focus({ preventScroll: true });
+    studentCards[firstNewIndex]?.querySelector("a, button")?.focus({ preventScroll: true });
   }
 }
 
@@ -190,7 +239,7 @@ let studentLightboxTrigger = null;
 let studentLightboxIndex = 0;
 
 function getVisibleStudentImages() {
-  return [...studentGrid.querySelectorAll(".student-work-card:not([hidden]) .student-work-card__preview > img")];
+  return [...studentGrid.querySelectorAll(".student-work-card:not([hidden]) button.student-work-card__preview > img")];
 }
 
 function showStudentLightboxImage(index) {
@@ -230,7 +279,7 @@ function closeStudentLightbox() {
 }
 
 studentGrid.addEventListener("click", (event) => {
-  const previewButton = event.target.closest(".student-work-card__preview");
+  const previewButton = event.target.closest("button.student-work-card__preview");
   if (previewButton) openStudentLightbox(previewButton);
 });
 

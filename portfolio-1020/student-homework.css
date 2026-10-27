@@ -123,6 +123,15 @@ body.student-homework-page::before {
   outline-offset: 5px;
 }
 
+a.student-work-card__preview,
+a.student-work-card__preview > img {
+  cursor: pointer;
+}
+
+.student-work-card[id] {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
 .student-work-card figcaption {
   display: none;
 }

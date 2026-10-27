@@ -1,0 +1,36 @@
+/* Reuse the approved typography measure; these rules add anchor clearance and artwork viewports only. */
+.project-page .project-copy-group {
+  scroll-margin-top: calc(var(--header-height, 112px) + 24px);
+}
+.project-page .project-notes-artwork {
+  position: relative;
+  overflow: hidden;
+}
+.project-page .project-notes-artwork--top {
+  aspect-ratio: 80 / 9;
+}
+.project-page .project-notes-artwork--bottom {
+  aspect-ratio: 25 / 27;
+}
+.project-page .project-notes-artwork img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-page .project-notes-artwork--top img {
+  object-position: top;
+}
+.project-page .project-notes-artwork--bottom img {
+  object-position: bottom;
+}
+.project-page .project-notes__translation-heading {
+  margin: 14px 0 0;
+  color: #666;
+  font-size: var(--project-copy-en-size);
+  line-height: 1.8;
+  letter-spacing: 0;
+  text-align: left;
+}

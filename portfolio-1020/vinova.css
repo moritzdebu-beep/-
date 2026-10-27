@@ -1,0 +1,13 @@
+.project-page--vinova .project-hero img {
+  object-position: center 26%;
+}
+
+@media (max-width: 991px) {
+  .project-page--vinova .project-hero {
+    aspect-ratio: 1.2;
+  }
+
+  .project-page--vinova .project-hero img {
+    object-position: center top;
+  }
+}

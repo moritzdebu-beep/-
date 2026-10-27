@@ -1,0 +1,22 @@
+/* Preserve the full typography sheets, including all three wordmarks per image. */
+.project-page--type-collection .project-hero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  aspect-ratio: auto;
+  background: #f8f8f8;
+}
+.project-page--type-collection .project-hero img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+@media (max-width: 991px) {
+  .project-page--type-collection .project-hero {
+    display: block;
+    padding-top: var(--header-height);
+  }
+  .project-page--type-collection .type-hero__additional {
+    display: none;
+  }
+}

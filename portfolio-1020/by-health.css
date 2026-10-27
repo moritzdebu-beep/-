@@ -1,0 +1,17 @@
+.by-health-notes {
+  min-width: 0;
+  color: #111;
+  font-family: var(--site-font-family);
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.by-health-notes p { margin: 0; }
+.by-health-notes p + p { margin-top: .85em; }
+
+@media (max-width: 991px) {
+  .by-health-notes { padding-inline: 24px; }
+}

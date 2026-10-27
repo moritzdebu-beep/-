@@ -20,6 +20,10 @@ body.project-page::before { display: none; }
 }
 .project-page .site-header.is-on-paper .brand__mark { filter: none; }
 
+.project-page--light-hero .site-header { --header-text-color: #222; }
+.project-page--light-hero .brand__mark { filter: none; }
+.project-page--light-hero .project-hero { background: #fff; }
+
 .project-hero {
   width: 100%;
   aspect-ratio: 2 / 1;

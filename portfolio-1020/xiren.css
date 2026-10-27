@@ -1,0 +1,26 @@
+.xiren-notes {
+  min-width: 0;
+  color: #111;
+  background: #fff;
+  font-family: var(--site-font-family);
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0;
+  text-align: left;
+  scroll-margin-top: calc(var(--header-height, 112px) + 24px);
+}
+
+.xiren-notes section + section { margin-top: 2em; }
+.xiren-notes h2 {
+  margin: 0 0 1em;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.xiren-notes p { margin: 0; }
+.xiren-notes p + p { margin-top: .85em; }
+
+@media (max-width: 991px) {
+  .xiren-notes { padding-inline: 24px; }
+}

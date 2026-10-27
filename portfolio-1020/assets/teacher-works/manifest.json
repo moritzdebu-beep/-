@@ -4,84 +4,96 @@
     "category": "包装设计",
     "width": 2560,
     "height": 1830,
-    "alt": "66cc3551c65d1fdz3dshrt5716.jpg"
+    "alt": "O MOOD 巧克力品牌包装设计",
+    "projectUrl": "./omood.html"
   },
   {
     "file": "original-02.jpg",
     "category": "包装设计",
     "width": 4000,
     "height": 2708,
-    "alt": "Entercycle面膜品牌包装设计"
+    "alt": "Entercycle面膜品牌包装设计",
+    "projectUrl": "./entercycle.html"
   },
   {
     "file": "original-03.png",
     "category": "包装设计",
     "width": 1920,
     "height": 1320,
-    "alt": "OMG COFFEE ╳ OneTwoOne-Design"
+    "alt": "OMG COFFEE ╳ OneTwoOne-Design",
+    "projectUrl": "./omg-coffee.html"
   },
   {
     "file": "original-04.jpg",
     "category": "包装设计",
     "width": 4000,
     "height": 3000,
-    "alt": "OOYEYE  梧悦"
+    "alt": "OOYEYE  梧悦",
+    "projectUrl": "./ooyeye.html"
   },
   {
     "file": "original-05.png",
     "category": "包装设计",
     "width": 2560,
     "height": 1536,
-    "alt": "OTO创意品牌包装设计"
+    "alt": "OTO创意品牌包装设计",
+    "projectUrl": "./oto-creative.html"
   },
   {
     "file": "original-06.jpg",
     "category": "包装设计",
     "width": 2766,
     "height": 1556,
-    "alt": "OTO春季限定品牌包装设计"
+    "alt": "OTO春季限定品牌包装设计",
+    "projectUrl": "./oto-spring.html"
   },
   {
     "file": "original-07.jpg",
     "category": "包装设计",
     "width": 4001,
     "height": 2475,
-    "alt": "OneTwoOne-中秋礼盒"
+    "alt": "OneTwoOne-中秋礼盒",
+    "projectUrl": "./midautumn.html"
   },
   {
     "file": "original-08.jpg",
     "category": "包装设计",
     "width": 4000,
     "height": 2400,
-    "alt": "宇治抹茶粉 ╳ OneTwoOne-Design"
+    "alt": "宇治抹茶粉 ╳ OneTwoOne-Design",
+    "projectUrl": "./uji-matcha.html"
   },
   {
     "file": "original-09.jpg",
     "category": "包装设计",
     "width": 3500,
     "height": 4450,
-    "alt": "汤臣倍健-包装设计"
+    "alt": "汤臣倍健-包装设计",
+    "projectUrl": "./by-health.html"
   },
   {
     "file": "original-10.jpg",
     "category": "包装设计",
     "width": 4001,
     "height": 4107,
-    "alt": "甜星流心芝士包装"
+    "alt": "甜星流心芝士包装",
+    "projectUrl": "./sweet-star.html"
   },
   {
     "file": "original-11.jpg",
     "category": "包装设计",
     "width": 4000,
     "height": 3000,
-    "alt": "萌虎贺春春节礼盒包装设计"
+    "alt": "萌虎贺春春节礼盒包装设计",
+    "projectUrl": "./tiger-gift.html"
   },
   {
     "file": "original-12.jpg",
     "category": "包装设计",
     "width": 4000,
     "height": 2250,
-    "alt": "西仁香薰 ╳ OneTwoOne-Design"
+    "alt": "西仁香薰 ╳ OneTwoOne-Design",
+    "projectUrl": "./xiren.html"
   },
   {
     "file": "original-14.png",
@@ -95,7 +107,8 @@
     "category": "品牌设计",
     "width": 4001,
     "height": 2607,
-    "alt": "CakeCrush-品牌端午礼盒设计"
+    "alt": "CakeCrush-品牌端午礼盒设计",
+    "projectUrl": "./cakecrush.html"
   },
   {
     "file": "original-17.jpg",
@@ -110,35 +123,40 @@
     "category": "品牌设计",
     "width": 5000,
     "height": 3000,
-    "alt": "Healy  品牌设计"
+    "alt": "Healy  品牌设计",
+    "projectUrl": "./healy.html"
   },
   {
     "file": "original-19.jpg",
     "category": "品牌设计",
     "width": 8001,
     "height": 5574,
-    "alt": "ICEUGAR品牌设计"
+    "alt": "ICEUGAR品牌设计",
+    "projectUrl": "./iceugar.html"
   },
   {
     "file": "original-20.jpg",
     "category": "品牌设计",
     "width": 4001,
     "height": 5529,
-    "alt": "Intuitive男士护肤品牌设计"
+    "alt": "Intuitive男士护肤品牌设计",
+    "projectUrl": "./intuitive.html"
   },
   {
     "file": "original-21.jpg",
     "category": "品牌设计",
     "width": 4001,
     "height": 2251,
-    "alt": "Milcore繆可-品牌包装全案设计"
+    "alt": "Milcore繆可-品牌包装全案设计",
+    "projectUrl": "./milcore.html"
   },
   {
     "file": "original-22.jpg",
     "category": "品牌设计",
     "width": 8001,
     "height": 5811,
-    "alt": "WATERLAB品牌设计"
+    "alt": "WATERLAB品牌设计",
+    "projectUrl": "./waterlab.html"
   },
   {
     "file": "original-23.jpg",
@@ -152,7 +170,16 @@
     "category": "品牌设计",
     "width": 4001,
     "height": 2465,
-    "alt": "适也露营品牌包装设计"
+    "alt": "适也露营品牌包装设计",
+    "projectUrl": "./camping.html"
+  },
+  {
+    "file": "type-collection.jpg",
+    "category": "字体设计",
+    "width": 1200,
+    "height": 2005,
+    "alt": "字体合集",
+    "projectUrl": "./type-collection.html"
   },
   {
     "file": "original-25.png",

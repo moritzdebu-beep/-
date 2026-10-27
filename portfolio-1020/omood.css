@@ -1,0 +1,81 @@
+.omood-page main,
+.omood-page main * {
+  font-family: var(--site-font-family);
+}
+
+.omood-page .site-header {
+  background: linear-gradient(180deg, rgb(255 255 255 / 98%) 0%, rgb(255 255 255 / 94%) 72%, rgb(255 255 255 / 0%) 100%);
+}
+
+.omood-title-cn { display: inline-block; }
+
+.omood-introduction {
+  width: max-content;
+  max-width: calc(100% - 48px);
+  margin-inline: auto;
+  padding-bottom: clamp(54px, 9.2vw, 132px);
+}
+
+.omood-introduction .project-intro {
+  padding-inline: 0;
+  text-align: left;
+}
+
+.omood-story {
+  display: grid;
+  grid-template-columns: 1fr 2.3fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+}
+
+.omood-story h2 {
+  margin: 0;
+  font-size: clamp(20px, 1.8vw, 28px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -.025em;
+}
+
+.omood-story p {
+  margin: 0;
+  font-size: clamp(15px, 1.12vw, 18px);
+  line-height: 1.95;
+}
+
+.omood-story p + p {
+  margin-top: 24px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.omood-credits {
+  padding-top: 36px;
+  border-top: 1px solid #d8d8d8;
+}
+
+.omood-credits dl {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) 1fr;
+  gap: 16px 24px;
+  margin: 0;
+  font-size: clamp(14px, 1.12vw, 18px);
+  line-height: 1.6;
+}
+
+.omood-credits dt { color: #666; }
+.omood-credits dd { margin: 0; }
+
+@media (max-width: 991px) {
+  .omood-story {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-inline: 24px;
+  }
+  .omood-credits dl { gap: 14px 16px; }
+}
+
+.omood-introduction .omood-background {
+  display: block;
+  contain: inline-size;
+  margin-inline: 0;
+}
