@@ -98,6 +98,15 @@ let visibleStudentWorkCount = 0;
 studentGrid.id = "student-gallery-projects";
 
 const studentDetailProjects = {
+  38: {
+    id: "student-weirdo-candy",
+    href: "./weirdo-candy.html",
+    image: "./assets/student-projects/weirdo-candy/12.webp",
+    title: "WEIRDO CANDY 果汁饮品品牌包装设计",
+    subtitle: "Fruit Juice Branding & Packaging Design",
+    width: 2000,
+    height: 2829,
+  },
   35: {
     id: "student-wild-sip",
     href: "./wild-sip.html",
@@ -135,7 +144,7 @@ const studentDetailProjects = {
     height: 7709,
   },
 };
-const studentWorkOrder = [35, 36, 37, 34, ...Array.from({ length: 33 }, (_, index) => index + 1)];
+const studentWorkOrder = [38, 35, 36, 37, 34, ...Array.from({ length: 33 }, (_, index) => index + 1)];
 
 for (const index of studentWorkOrder) {
   const project = studentDetailProjects[index];
