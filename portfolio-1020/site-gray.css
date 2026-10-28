@@ -1,0 +1,34 @@
+/* One clean, light neutral gray across the portfolio and its opening screen. */
+:root { --site-background: #ededed; }
+
+html,
+html body[class] {
+  background: var(--site-background);
+  --map-content-background: var(--site-background);
+}
+html body::before { background: var(--site-background); }
+
+html body[class] :is(
+  .page-shell, .catalog-section, .catalog-board, .studio-footer,
+  .project-hero, .project-intro, .project-gallery, .project-return, .xiren-notes,
+  .course-main, .course-hero, .course-summary, .course-detail, .course-tabs,
+  .student-video-dialog, .work-lightbox, .student-lightbox
+) {
+  background: var(--site-background);
+}
+
+html body[class] .site-header,
+html body[class] .site-header.is-on-paper {
+  --header-text-color: #222;
+  color: #222;
+  background: var(--site-background);
+}
+html body[class] .site-header .brand__mark { filter: none; }
+html body[class] .site-header .primary-nav { color: #222; }
+
+html body[class] :is(.work-lightbox, .student-lightbox, .student-video-dialog) { color: #171717; }
+.student-video-dialog::backdrop { background: var(--site-background); }
+html body[class] .catalog-more__link { color: #444; }
+html body[class] .catalog-more__link:hover { color: #111; }
+html body[class] :is(.collection-intro__bulb, .student-category-heading__cap) img { mix-blend-mode: multiply; }
+
