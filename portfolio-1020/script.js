@@ -171,3 +171,4 @@ window.otoNavigate = (url) => {
   document.addEventListener("visibilitychange", updatePlayback);
   updatePlayback();
 })();
+
